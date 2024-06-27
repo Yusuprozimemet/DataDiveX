@@ -2,21 +2,20 @@ import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 from sklearn.tree import DecisionTreeRegressor
-from utils import get_config
 
 class ANNModel:
     def __init__(self, config):
-        self.config = config
+        self.config = config['model']['ann']
         self.model = self.build_model()
 
     def build_model(self):
         model = Sequential()
-        input_shape = self.config['model']['ann']['input_shape']
-        for layer in self.config['model']['ann']['layers']:
-            model.add(Dense(units=layer['units'], activation=layer['activation'], input_shape=(input_shape,)))
-            input_shape = None  # Only set input shape for the first layer
+        input_dim = self.config['input_dim']
+        for layer_config in self.config['layers']:
+            model.add(Dense(units=layer_config['units'], activation=layer_config['activation'], input_shape=(input_dim,)))
+            input_dim = None  # Only set input shape for the first layer
         model.add(Dense(1))
-        model.compile(optimizer=self.config['model']['ann']['optimizer'], loss=self.config['model']['ann']['loss'], metrics=self.config['model']['ann']['metrics'])
+        model.compile(optimizer=self.config['optimizer'], loss=self.config['loss'], metrics=self.config['metrics'])
         return model
 
     def train(self, X_train, y_train, X_test, y_test, epochs, batch_size):

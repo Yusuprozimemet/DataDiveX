@@ -1,7 +1,7 @@
 import pandas as pd
 from data_ingestion import DataIngestion
 from EDA import EDA
-from utils import initial_update_config_with_columns, update_config_with_house_age, get_config
+from utils import initial_update_config_with_columns, update_config_with_house_age, get_config, save_config
 
 def calculate_house_age(df):
     df['date'] = pd.to_datetime(df['date'])
@@ -35,6 +35,16 @@ try:
 
         # Update config with columns and house_age
         update_config_with_house_age(df, 'config.yaml')
+
+        updated_csv_path = 'artifacts/kc_house_data_updated.csv'
+        df.to_csv(updated_csv_path, index=False)
+        print(f"Updated CSV saved as {updated_csv_path}")
+
+        # Add updated_csv_path to config dictionary
+        config['data']['updated_csv_path'] = updated_csv_path
+
+        # Save updated config file
+        save_config(config, 'config.yaml')
 
         # Generate line plot of price vs house_age
         eda.plot_price_vs_house_age(df)

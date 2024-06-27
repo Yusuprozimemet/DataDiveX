@@ -1,0 +1,10 @@
+pandas
+numpy
+seaborn
+matplotlib
+scikit-learn
+Flask
+dill
+pyyaml
+tensorflow==2.15
+#-e .

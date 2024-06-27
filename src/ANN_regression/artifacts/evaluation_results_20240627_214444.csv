@@ -1,0 +1,2 @@
+Timestamp,MAE,MSE,RMSE,EVS,batch_size,epochs,input_dim,layers,loss,metrics,optimizer,type
+2024-06-27 21:44:44,106458.37455632717,30759837010.671055,175384.8254857616,0.7681418816804768,128,100,17,"[{'activation': 'relu', 'units': 17}, {'activation': 'relu', 'units': 17}, {'activation': 'relu', 'units': 17}, {'activation': 'relu', 'units': 17}]",mse,['mean_squared_error'],adam,ANN

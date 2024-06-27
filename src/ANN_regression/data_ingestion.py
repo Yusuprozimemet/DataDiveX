@@ -3,25 +3,34 @@ from utils import get_config
 
 class DataIngestion:
     def __init__(self, config):
+        self.config = config
         self.filepath = config['data']['filepath']
         print(f"Filepath: {self.filepath}")  # Added for verification
 
-    def load_data(self):
+    def load_data(self, csv_path=None):
+        if csv_path is None:
+            filepath = self.filepath
+        else:
+            filepath = csv_path
+        
         try:
-            df = pd.read_csv(self.filepath)
-            print(f"Data loaded successfully from {self.filepath}")
+            df = pd.read_csv(filepath)
+            print(f"Data loaded successfully from {filepath}")
             return df
         except FileNotFoundError:
-            print(f"Error: File '{self.filepath}' not found.")
+            print(f"Error: File '{filepath}' not found.")
             return None
         except Exception as e:
-            print(f"Error: Failed to load data from '{self.filepath}'. Error message: {str(e)}")
+            print(f"Error: Failed to load data from '{filepath}'. Error message: {str(e)}")
             return None
 
 if __name__ == "__main__":
     config = get_config()  # Assuming get_config() function fetches your configuration
     data_ingestion = DataIngestion(config)
-    df = data_ingestion.load_data()
+    
+    # Load data from the updated CSV file
+    updated_csv_path = 'artifacts/kc_house_data_updated.csv'  # Adjust this path as necessary
+    df = data_ingestion.load_data(updated_csv_path)
     
     if df is not None:
         print("Data loading process successful.")

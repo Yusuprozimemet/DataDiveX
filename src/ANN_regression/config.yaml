@@ -17,35 +17,60 @@ data:
   - long
   - sqft_living15
   - sqft_lot15
-  - house_age
   dependent_var: price
   filepath: E:/DataAnalysisTool/notebook/data/kc_house_data.csv
   independent_vars: *id001
+  updated_csv_path: artifacts/kc_house_data_updated.csv
+
 model:
   ann:
     batch_size: 128
-    epochs: 400
-    input_shape: 19
+    epochs: 100
+    input_dim: 17
     layers:
     - activation: relu
-      units: 19
+      units: 17
     - activation: relu
-      units: 19
+      units: 17
     - activation: relu
-      units: 19
+      units: 17
     - activation: relu
-      units: 19
+      units: 17
     loss: mse
     metrics:
     - mean_squared_error
     optimizer: adam
+
   decision_tree:
     max_depth: 9
     random_state: 42
+
   type: ANN
-prediction:
-  new_gem:
-  - 998
-  - 1000
+
 saved_model:
   filepath: model.h5
+
+model_paths:
+  model_h5_path: artifacts/models/model_20240627_225724.h5
+  scaler_pkl_path: artifacts/scaler.pkl
+
+prediction:
+  input_data:
+    new_gem: 
+      - 998
+      - 1000
+      - 1200  # Example value for sqft_living
+      - 4000  # Example value for sqft_lot
+      - 1.5   # Example value for floors
+      - 0     # Example value for waterfront (assuming categorical)
+      - 2     # Example value for view (assuming categorical)
+      - 3     # Example value for condition (assuming categorical)
+      - 7     # Example value for grade (assuming categorical)
+      - 1000  # Example value for sqft_above
+      - 200   # Example value for sqft_basement
+      - 1990  # Example value for yr_built
+      - 2010  # Example value for yr_renovated
+      - 47.6  # Example value for lat
+      - -122  # Example value for long
+      - 1500  # Example value for sqft_living15
+      - 5000  # Example value for sqft_lot15

@@ -1,7 +1,12 @@
 import os
+from matplotlib import pyplot as plt
 import yaml
-import pandas as pd
-import matplotlib.pyplot as plt
+
+def save_config(config, config_path='config.yaml'):
+    with open(config_path, 'w') as file:
+        yaml.dump(config, file)
+
+# Your existing functions...
 
 def save_plot(figure, filename, folder='artifacts'):
     if not os.path.exists(folder):
