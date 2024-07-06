@@ -4,8 +4,6 @@ I'm developing a data analysis tool. It will encompass all essential frameworks 
 
 Real-world scenarios are often more complex. For instance, during RNA triplex stability data analysis, I employed advanced methodologies. Expect even more diverse and sophisticated analysis methods in future updates.
 
-Enjoy exploring the tool! Don't hesitate to reach out if you encounter any issues.
-
 ### How to Use This App?
 
 To get started:
