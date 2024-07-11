@@ -1,11 +1,24 @@
-# DataAnalysisTool
+# DataDiveX
 
-I'm developing a data analysis tool. It will encompass all essential frameworks for machine learning, including ANN, CNN, RNN, NLP, Autoencoders, GANs, and their hybrid models to tackle real-world problems. Currently, I've completed the ANN_example for simple case and ANN_regression model for predicting house prices using regression on Kaggle. More features are in the works, and datasets will be provided upon completion.
+Welcome to DataDiveX, your personalized data analysis tool designed to accelerate future data projects across diverse real-world problems. Currently under development, DataDiveX lays the groundwork with initial implementations such as:
 
-Real-world scenarios are often more complex. For instance, during RNA triplex stability data analysis, I employed advanced methodologies. Expect even more diverse and sophisticated analysis methods in future updates.
+- **ANN Example**: Explore our Artificial Neural Network implementation for a simple case study.
+- **ANN Regression**: Predict house prices using regression models, demonstrated on Kaggle datasets.
 
-### How to Use This App?
+### Future Enhancements
+
+In the pipeline:
+- **CNN, RNN, NLP, GANs**: Future updates will include Convolutional Neural Networks (CNN), Recurrent Neural Networks (RNN), Natural Language Processing (NLP), and Generative Adversarial Networks (GANs).
+
+### How to Use DataDiveX
 
 To get started:
-- Clone the repository from Git.
-- Dive into the codebase and unleash your creativity!
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/DataDiveX.git
+   ```
+
+2. Explore the provided examples and pipelines to accelerate your own data analysis projects.
+
+Enjoy!
