@@ -1,6 +1,6 @@
 # DataDiveX
 
-Welcome to DataDiveX, your personalized data analysis tool designed to accelerate future data projects across diverse real-world problems. Currently under development, DataDiveX lays the groundwork with initial implementations such as:
+DataDiveX lays the groundwork with initial implementations such as:
 
 - **ANN Example**: Explore our Artificial Neural Network implementation for a simple case study.
 - **ANN Regression**: Predict house prices using regression models, demonstrated on Kaggle datasets.
